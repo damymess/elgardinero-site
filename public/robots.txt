@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://elgardinero.ma
+
+# Sitemaps
+Sitemap: https://elgardinero.ma/sitemap.xml
