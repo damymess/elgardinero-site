@@ -67,7 +67,7 @@ export default function Home() {
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUM}?text=${whatsappMessage}`;
 
   return (
-    <main className="min-h-screen bg-white font-sans text-gray-800 pb-20 md:pb-0">
+    <main className="min-h-screen bg-gray-50 font-sans text-gray-800 pb-20 md:pb-0">
 
       {/* FAQ Schema JSON-LD */}
       <script
@@ -80,7 +80,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
 
           {/* Hero principal — span 2 colonnes */}
-          <div className="md:col-span-2 bg-emerald-800 text-white p-8 md:p-12 rounded-xl relative overflow-hidden min-h-[340px] flex flex-col justify-between">
+          <div className="md:col-span-2 bg-emerald-800 text-white p-6 md:p-12 rounded-xl relative overflow-hidden min-h-[300px] md:min-h-[340px] flex flex-col justify-between">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(16,185,129,0.3),transparent_60%)]" />
             <div className="relative z-10">
               <div className="inline-flex items-center gap-2 bg-emerald-700/50 px-4 py-2 rounded-full mb-6 border border-emerald-600/50">
@@ -118,7 +118,7 @@ export default function Home() {
           </div>
 
           {/* Carte photo hero */}
-          <div className="bg-white rounded-xl overflow-hidden relative min-h-[280px] md:min-h-0">
+          <div className="bg-white rounded-xl overflow-hidden relative min-h-[240px] md:min-h-0 border border-gray-200 shadow-sm">
             <Image
               src="/hero-garden.jpg"
               alt="Jardin entretenu par Youssef - jardinier Rabat"
@@ -148,11 +148,11 @@ export default function Home() {
       {/* ===== SERVICES BENTO GRID ===== */}
       <section className="px-4 md:px-6 py-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-emerald-950 mb-6">Mes Services</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Mes Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
 
             {/* Taille & Elagage — large */}
-            <div className="md:col-span-2 bg-white p-8 rounded-xl border border-gray-200 hover:border-emerald-200 transition-colors group">
+            <div className="md:col-span-2 bg-white p-5 md:p-8 rounded-xl border border-gray-200 shadow-sm hover:border-emerald-200 transition-colors group">
               <div className="flex items-start justify-between mb-6">
                 <div className="bg-emerald-50 p-4 rounded-lg group-hover:bg-emerald-100 transition-colors">
                   <Scissors className="text-emerald-600" size={28} />
@@ -165,7 +165,7 @@ export default function Home() {
             </div>
 
             {/* Entretien Pelouse */}
-            <div className="bg-white p-8 rounded-xl border border-gray-200 hover:border-emerald-200 transition-colors group">
+            <div className="bg-white p-5 md:p-8 rounded-xl border border-gray-200 shadow-sm hover:border-emerald-200 transition-colors group">
               <div className="flex items-start justify-between mb-6">
                 <div className="bg-emerald-50 p-4 rounded-lg group-hover:bg-emerald-100 transition-colors">
                   <Leaf className="text-emerald-600" size={28} />
@@ -178,7 +178,7 @@ export default function Home() {
             </div>
 
             {/* Grand Nettoyage */}
-            <div className="bg-white p-8 rounded-xl border border-gray-200 hover:border-emerald-200 transition-colors group">
+            <div className="bg-white p-5 md:p-8 rounded-xl border border-gray-200 shadow-sm hover:border-emerald-200 transition-colors group">
               <div className="flex items-start justify-between mb-6">
                 <div className="bg-emerald-50 p-4 rounded-lg group-hover:bg-emerald-100 transition-colors">
                   <Trash2 className="text-emerald-600" size={28} />
@@ -191,7 +191,7 @@ export default function Home() {
             </div>
 
             {/* Plantation — large avec image */}
-            <div className="md:col-span-2 bg-emerald-50 p-8 rounded-xl border border-emerald-100 hover:border-emerald-200 transition-colors group">
+            <div className="md:col-span-2 bg-emerald-50 p-5 md:p-8 rounded-xl border border-emerald-100 hover:border-emerald-200 transition-colors group">
               <div className="flex items-start justify-between mb-6">
                 <div className="bg-white p-4 rounded-lg group-hover:shadow-sm transition-shadow">
                   <Sprout className="text-emerald-600" size={28} />
@@ -204,7 +204,7 @@ export default function Home() {
             </div>
 
             {/* Elagage Palmiers */}
-            <div className="bg-white p-8 rounded-xl border border-gray-200 hover:border-emerald-200 transition-colors group">
+            <div className="bg-white p-5 md:p-8 rounded-xl border border-gray-200 shadow-sm hover:border-emerald-200 transition-colors group">
               <div className="flex items-start justify-between mb-6">
                 <div className="bg-emerald-50 p-4 rounded-lg group-hover:bg-emerald-100 transition-colors">
                   <TreePalm className="text-emerald-600" size={28} />
@@ -217,7 +217,7 @@ export default function Home() {
             </div>
 
             {/* Arrosage Automatique */}
-            <div className="bg-white p-8 rounded-xl border border-gray-200 hover:border-emerald-200 transition-colors group">
+            <div className="bg-white p-5 md:p-8 rounded-xl border border-gray-200 shadow-sm hover:border-emerald-200 transition-colors group">
               <div className="flex items-start justify-between mb-6">
                 <div className="bg-emerald-50 p-4 rounded-lg group-hover:bg-emerald-100 transition-colors">
                   <Droplets className="text-emerald-600" size={28} />
@@ -230,7 +230,7 @@ export default function Home() {
             </div>
 
             {/* Entretien mensuel — accent */}
-            <div className="md:col-span-2 bg-emerald-800 text-white p-8 rounded-xl relative overflow-hidden">
+            <div className="md:col-span-2 bg-emerald-800 text-white p-5 md:p-8 rounded-xl relative overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(16,185,129,0.2),transparent_60%)]" />
               <div className="relative z-10">
                 <div className="bg-white/15 p-4 rounded-lg mb-6 w-fit backdrop-blur-sm">
@@ -250,7 +250,7 @@ export default function Home() {
       {/* ===== REALISATIONS BENTO ===== */}
       <section className="px-4 md:px-6 py-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-emerald-950 mb-6">Avant / Apr&egrave;s</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Avant / Apr&egrave;s</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="rounded-xl overflow-hidden relative aspect-video">
               <span className="absolute top-4 left-4 bg-black/70 text-white px-4 py-1.5 rounded-full text-xs font-bold z-10 uppercase tracking-wider">Avant</span>
@@ -267,7 +267,7 @@ export default function Home() {
       {/* ===== COMMENT CA MARCHE — 3 colonnes bento ===== */}
       <section className="px-4 md:px-6 py-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-emerald-950 mb-2">Comment &ccedil;a marche ?</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">Comment &ccedil;a marche ?</h2>
           <p className="text-gray-500 mb-6">Un devis gratuit en 3 &eacute;tapes simples</p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <StepCard
@@ -295,9 +295,9 @@ export default function Home() {
       {/* ===== TEMOIGNAGES BENTO ===== */}
       <section className="px-4 md:px-6 py-6">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-2xl md:text-3xl font-bold text-emerald-950 mb-6">Ce que disent mes clients</h2>
+          <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Ce que disent mes clients</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-            <div className="md:col-span-2 bg-white p-8 rounded-xl border border-gray-200 relative">
+            <div className="md:col-span-2 bg-white p-5 md:p-8 rounded-xl border border-gray-200 shadow-sm relative">
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => <Star key={i} size={18} className="fill-amber-400 text-amber-400" />)}
               </div>
@@ -313,7 +313,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-emerald-800 text-white p-8 rounded-xl flex flex-col justify-between">
+            <div className="bg-emerald-800 text-white p-5 md:p-8 rounded-xl flex flex-col justify-between">
               <div>
                 <div className="flex gap-1 mb-4">
                   {[...Array(5)].map((_, i) => <Star key={i} size={18} className="fill-amber-400 text-amber-400" />)}
@@ -331,7 +331,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="bg-white p-8 rounded-xl border border-gray-200">
+            <div className="bg-white p-5 md:p-8 rounded-xl border border-gray-200 shadow-sm">
               <div className="flex gap-1 mb-4">
                 {[...Array(5)].map((_, i) => <Star key={i} size={18} className="fill-amber-400 text-amber-400" />)}
               </div>
@@ -348,7 +348,7 @@ export default function Home() {
             </div>
 
             {/* Note de confiance */}
-            <div className="md:col-span-2 bg-emerald-50 p-8 rounded-xl border border-emerald-100 flex flex-col md:flex-row items-center gap-6">
+            <div className="md:col-span-2 bg-emerald-50 p-5 md:p-8 rounded-xl border border-emerald-100 flex flex-col md:flex-row items-center gap-6">
               <div className="bg-white p-4 rounded-lg shadow-sm shrink-0">
                 <ShieldCheck size={32} className="text-emerald-600" />
               </div>
@@ -366,7 +366,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {/* Titre FAQ dans une carte */}
-            <div className="bg-emerald-800 text-white p-8 rounded-xl flex flex-col justify-center">
+            <div className="bg-emerald-800 text-white p-5 md:p-8 rounded-xl flex flex-col justify-center">
               <h2 className="text-2xl md:text-3xl font-bold mb-3">Questions fr&eacute;quentes</h2>
               <p className="text-emerald-200">Tout ce que vous devez savoir avant de faire appel &agrave; moi.</p>
             </div>
@@ -406,8 +406,8 @@ export default function Home() {
       <section className="px-4 md:px-6 py-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
           {/* A propos */}
-          <div className="md:col-span-2 bg-white p-8 md:p-10 rounded-xl border border-gray-200">
-            <h2 className="text-2xl font-bold text-emerald-950 mb-4">&Agrave; propos de {GARDENER_NAME}</h2>
+          <div className="md:col-span-2 bg-white p-5 md:p-10 rounded-xl border border-gray-200 shadow-sm">
+            <h2 className="text-2xl font-bold text-gray-900 mb-4">&Agrave; propos de {GARDENER_NAME}</h2>
             <p className="text-gray-600 leading-relaxed text-lg mb-6">
               Bonjour, je suis artisan jardinier ind&eacute;pendant. Mon objectif est simple : vous offrir un service de qualit&eacute;, ponctuel et honn&ecirc;te. En faisant appel &agrave; moi, vous soutenez un p&egrave;re de famille travailleur.
             </p>
@@ -419,7 +419,7 @@ export default function Home() {
           </div>
 
           {/* CTA carte */}
-          <div className="bg-[#25D366] text-white p-8 rounded-xl flex flex-col justify-between">
+          <div className="bg-[#25D366] text-white p-5 md:p-8 rounded-xl flex flex-col justify-between">
             <div>
               <MessageCircle size={32} className="mb-4" />
               <h3 className="text-xl font-bold mb-2">Envoyez une photo de votre jardin</h3>
@@ -487,7 +487,7 @@ export default function Home() {
 
 function BentoStat({ value, label, accent }: { value: string; label: string; accent?: boolean }) {
   return (
-    <div className={`p-6 rounded-lg text-center ${accent ? 'bg-emerald-800 text-white' : 'bg-white border border-gray-200'}`}>
+    <div className={`p-4 md:p-6 rounded-lg text-center ${accent ? 'bg-emerald-800 text-white' : 'bg-white border border-gray-200 shadow-sm'}`}>
       <p className={`text-2xl md:text-3xl font-extrabold ${accent ? 'text-white' : 'text-emerald-700'}`}>{value}</p>
       <p className={`text-sm mt-1 ${accent ? 'text-emerald-200' : 'text-gray-500'}`}>{label}</p>
     </div>
@@ -496,8 +496,8 @@ function BentoStat({ value, label, accent }: { value: string; label: string; acc
 
 function StepCard({ num, icon, title, desc }: { num: number; icon: React.ReactNode; title: string; desc: string }) {
   return (
-    <div className="bg-white p-8 rounded-xl border border-gray-200 relative">
-      <div className="absolute top-6 right-6 text-4xl font-extrabold text-gray-100">{`0${num}`}</div>
+    <div className="bg-white p-5 md:p-8 rounded-xl border border-gray-200 shadow-sm relative">
+      <div className="absolute top-4 right-4 md:top-6 md:right-6 text-4xl font-extrabold text-gray-100">{`0${num}`}</div>
       <div className="bg-emerald-50 p-3 rounded-xl mb-5 w-fit">{icon}</div>
       <h3 className="font-bold text-lg mb-2 text-gray-900">{title}</h3>
       <p className="text-gray-500 text-sm leading-relaxed">{desc}</p>
