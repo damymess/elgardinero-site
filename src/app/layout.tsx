@@ -1,11 +1,19 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import GoogleAnalytics from "./google-analytics";
 import Navbar from "@/components/Navbar";
 import WhatsAppFloat from "@/components/WhatsAppFloat";
 import "./globals.css";
+import { Geist } from "next/font/google";
+import { cn } from "@/lib/utils";
 
-const inter = Inter({ subsets: ["latin"] });
+const geist = Geist({subsets:['latin'],variable:'--font-sans'});
+
+const geistSans = localFont({
+  src: "./fonts/GeistVF.woff",
+  variable: "--font-geist-sans",
+  weight: "100 900",
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://elgardinero.ma"),
@@ -119,14 +127,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className="scroll-smooth">
+    <html lang="fr" className={cn("scroll-smooth", "font-sans", geist.variable)}>
       <head>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.className} pt-14`}>
+      <body className={`${geistSans.variable} antialiased pt-14`}>
         <GoogleAnalytics />
         <Navbar />
         {children}

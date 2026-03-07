@@ -52,7 +52,7 @@ export default function ServicePage({ service }: { service: Service }) {
   };
 
   return (
-    <main className="min-h-screen bg-neutral-100 text-neutral-800 pb-24 md:pb-0">
+    <main className="min-h-screen bg-white text-gray-800 pb-24 md:pb-0">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
@@ -61,7 +61,7 @@ export default function ServicePage({ service }: { service: Service }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
-      <section className="bg-emerald-800 text-white pt-12 pb-16 px-4 rounded-b-[2.5rem] shadow-lg">
+      <section className="bg-emerald-800 text-white pt-12 pb-16 px-4 rounded-b-lg shadow-md">
         <div className="max-w-3xl mx-auto">
           <Link href="/#services" className="inline-flex items-center gap-2 text-emerald-200 hover:text-white mb-8 text-sm transition-colors">
             <ArrowLeft size={16} /> Retour
@@ -70,10 +70,10 @@ export default function ServicePage({ service }: { service: Service }) {
           <p className="text-lg text-emerald-100 mb-4 max-w-2xl">{service.heroText}</p>
           <p className="text-emerald-300 font-semibold text-lg mb-8">Tarif : {service.priceRange}</p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-8 py-4 rounded-2xl font-bold text-lg transition-transform active:scale-95 shadow-xl">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-8 py-4 rounded-md font-bold text-lg transition-transform active:scale-95 shadow-md">
               <MessageCircle size={24} /> Demander un devis
             </a>
-            <a href={`tel:${PHONE_LINK}`} className="flex items-center justify-center gap-2 bg-white text-emerald-900 hover:bg-neutral-100 px-8 py-4 rounded-2xl font-bold text-lg transition-transform active:scale-95 shadow-xl">
+            <a href={`tel:${PHONE_LINK}`} className="flex items-center justify-center gap-2 bg-white text-emerald-900 hover:bg-gray-50 px-8 py-4 rounded-md font-bold text-lg transition-transform active:scale-95 shadow-md">
               <Phone size={24} /> {PHONE_DISPLAY}
             </a>
           </div>
@@ -81,44 +81,44 @@ export default function ServicePage({ service }: { service: Service }) {
       </section>
 
       <section className="py-16 px-4 max-w-3xl mx-auto">
-        <div className="bg-white rounded-[2rem] shadow-sm border border-neutral-200 overflow-hidden">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
           <div className="aspect-video relative">
             <Image src={service.image} alt={service.name} fill className="object-cover" sizes="(max-width: 768px) 100vw, 768px" />
           </div>
           <div className="p-8 md:p-12">
-            <h2 className="text-2xl font-bold text-emerald-950 mb-6">{service.name} &agrave; Rabat</h2>
-            <p className="text-neutral-700 leading-relaxed text-lg mb-8">{service.details}</p>
+            <h2 className="text-2xl font-bold text-gray-900 mb-6">{service.name} &agrave; Rabat</h2>
+            <p className="text-gray-700 leading-relaxed text-lg mb-8">{service.details}</p>
 
-            <h3 className="font-bold text-lg text-neutral-900 mb-4">Ce que comprend ce service</h3>
+            <h3 className="font-bold text-lg text-gray-900 mb-4">Ce que comprend ce service</h3>
             <div className="space-y-3 mb-8">
               {service.benefits.map((b) => (
                 <div key={b} className="flex items-start gap-3">
                   <CheckCircle2 size={20} className="text-emerald-500 mt-0.5 shrink-0" />
-                  <span className="text-neutral-700">{b}</span>
+                  <span className="text-gray-700">{b}</span>
                 </div>
               ))}
             </div>
 
-            <div className="bg-emerald-50 p-6 rounded-2xl">
+            <div className="bg-emerald-50 p-6 rounded-lg">
               <p className="font-bold text-emerald-900 mb-2">Tarif indicatif : {service.priceRange}</p>
-              <p className="text-neutral-600 text-sm">Le tarif exact d&eacute;pend de la surface, de l&apos;&eacute;tat du jardin et du volume de travail. Contactez-moi pour un devis gratuit et pr&eacute;cis.</p>
+              <p className="text-gray-600 text-sm">Le tarif exact d&eacute;pend de la surface, de l&apos;&eacute;tat du jardin et du volume de travail. Contactez-moi pour un devis gratuit et pr&eacute;cis.</p>
             </div>
           </div>
         </div>
       </section>
 
       <section className="py-12 px-4">
-        <div className="max-w-md mx-auto bg-emerald-800 text-white p-8 rounded-3xl text-center shadow-lg">
+        <div className="max-w-md mx-auto bg-emerald-800 text-white p-8 rounded-lg text-center shadow-md">
           <h2 className="text-xl font-bold mb-3">Int&eacute;ress&eacute; par ce service ?</h2>
           <p className="text-emerald-100 mb-6">Envoyez une photo pour un devis gratuit en moins d&apos;1 heure !</p>
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-6 py-4 rounded-xl font-bold transition-transform active:scale-95 w-full">
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-6 py-4 rounded-md font-bold transition-transform active:scale-95 w-full">
             <MessageCircle size={24} /> Contacter {GARDENER_NAME}
           </a>
         </div>
       </section>
 
       <div className="md:hidden fixed bottom-6 left-0 right-0 px-4 z-50">
-        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] text-white w-full py-4 rounded-2xl shadow-2xl font-bold text-lg border-2 border-white/20">
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] text-white w-full py-4 rounded-md shadow-lg font-bold text-lg border-2 border-white/20">
           <MessageCircle size={24} /> Demander un devis
         </a>
       </div>

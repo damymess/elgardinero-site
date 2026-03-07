@@ -8,15 +8,15 @@ export default function Navbar() {
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUM}?text=${encodeURIComponent("Bonjour, je vous contacte depuis votre site web.")}`;
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-emerald-900/95 backdrop-blur-sm border-b border-emerald-800/50">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-4 md:px-6 h-14 flex items-center justify-between">
-        <Link href="/" className="font-extrabold text-white text-lg tracking-tight">
+        <Link href="/" className="font-extrabold text-gray-900 text-lg tracking-tight">
           El Gardinero
         </Link>
         <div className="flex items-center gap-3">
           <a
             href={`tel:${PHONE_LINK}`}
-            className="hidden sm:flex items-center gap-2 text-emerald-200 hover:text-white text-sm font-medium transition-colors"
+            className="hidden sm:flex items-center gap-2 text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors"
           >
             <Phone size={16} />
             06 49 23 15 45
@@ -25,7 +25,7 @@ export default function Navbar() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-4 py-2 rounded-xl font-bold text-sm transition-transform active:scale-95"
+            className="flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-4 py-2 rounded-md font-bold text-sm transition-transform active:scale-95"
           >
             <MessageCircle size={16} />
             <span className="hidden sm:inline">WhatsApp</span>

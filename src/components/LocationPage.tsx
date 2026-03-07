@@ -47,7 +47,7 @@ export default function LocationPage({ loc }: { loc: Location }) {
   };
 
   return (
-    <main className="min-h-screen bg-neutral-100 text-neutral-800 pb-24 md:pb-0">
+    <main className="min-h-screen bg-white text-gray-800 pb-24 md:pb-0">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
@@ -56,7 +56,7 @@ export default function LocationPage({ loc }: { loc: Location }) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(localServiceJsonLd) }}
       />
-      <section className="bg-emerald-800 text-white pt-12 pb-16 px-4 rounded-b-[2.5rem] shadow-lg">
+      <section className="bg-emerald-800 text-white pt-12 pb-16 px-4 rounded-b-lg shadow-md">
         <div className="max-w-3xl mx-auto">
           <Link href="/" className="inline-flex items-center gap-2 text-emerald-200 hover:text-white mb-8 text-sm transition-colors">
             <ArrowLeft size={16} /> Retour
@@ -70,10 +70,10 @@ export default function LocationPage({ loc }: { loc: Location }) {
           </h1>
           <p className="text-lg text-emerald-100 mb-8 max-w-2xl">{loc.heroText}</p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-8 py-4 rounded-2xl font-bold text-lg transition-transform active:scale-95 shadow-xl">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-8 py-4 rounded-md font-bold text-lg transition-transform active:scale-95 shadow-md">
               <MessageCircle size={24} /> Devis gratuit WhatsApp
             </a>
-            <a href={`tel:${PHONE_LINK}`} className="flex items-center justify-center gap-2 bg-white text-emerald-900 hover:bg-neutral-100 px-8 py-4 rounded-2xl font-bold text-lg transition-transform active:scale-95 shadow-xl">
+            <a href={`tel:${PHONE_LINK}`} className="flex items-center justify-center gap-2 bg-white text-emerald-900 hover:bg-gray-50 px-8 py-4 rounded-md font-bold text-lg transition-transform active:scale-95 shadow-md">
               <Phone size={24} /> {PHONE_DISPLAY}
             </a>
           </div>
@@ -81,14 +81,14 @@ export default function LocationPage({ loc }: { loc: Location }) {
       </section>
 
       <section className="py-16 px-4 max-w-3xl mx-auto">
-        <div className="bg-white rounded-[2rem] shadow-sm border border-neutral-200 p-8 md:p-12">
-          <h2 className="text-2xl font-bold text-emerald-950 mb-6">Entretien de jardins &agrave; {loc.name}</h2>
-          <p className="text-neutral-700 leading-relaxed text-lg mb-8">{loc.details}</p>
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 md:p-12">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6">Entretien de jardins &agrave; {loc.name}</h2>
+          <p className="text-gray-700 leading-relaxed text-lg mb-8">{loc.details}</p>
 
-          <h3 className="font-bold text-lg text-neutral-900 mb-4">Services disponibles &agrave; {loc.name}</h3>
+          <h3 className="font-bold text-lg text-gray-900 mb-4">Services disponibles &agrave; {loc.name}</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
             {services.map((s) => (
-              <div key={s.name} className="flex items-center gap-3 bg-emerald-50 px-4 py-3 rounded-xl">
+              <div key={s.name} className="flex items-center gap-3 bg-emerald-50 px-4 py-3 rounded-lg">
                 {s.icon}
                 <span className="font-medium text-emerald-900">{s.name}</span>
               </div>
@@ -97,16 +97,16 @@ export default function LocationPage({ loc }: { loc: Location }) {
 
           {loc.neighborhoods && (
             <>
-              <h3 className="font-bold text-lg text-neutral-900 mb-4">Quartiers desservis</h3>
+              <h3 className="font-bold text-lg text-gray-900 mb-4">Quartiers desservis</h3>
               <div className="flex flex-wrap gap-2 mb-8">
                 {loc.neighborhoods.map((n) => (
-                  <span key={n} className="bg-neutral-100 text-neutral-700 px-3 py-1.5 rounded-lg text-sm font-medium">{n}</span>
+                  <span key={n} className="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm font-medium">{n}</span>
                 ))}
               </div>
             </>
           )}
 
-          <h3 className="font-bold text-lg text-neutral-900 mb-4">Zones &agrave; proximit&eacute;</h3>
+          <h3 className="font-bold text-lg text-gray-900 mb-4">Zones &agrave; proximit&eacute;</h3>
           <div className="flex flex-wrap gap-2 mb-8">
             {loc.nearbyAreas.map((area) => {
               const nearbyLoc = locations.find((l) => l.name === area);
@@ -115,12 +115,12 @@ export default function LocationPage({ loc }: { loc: Location }) {
                   Jardinier {area}
                 </Link>
               ) : (
-                <span key={area} className="bg-neutral-100 text-neutral-700 px-3 py-1.5 rounded-lg text-sm font-medium">{area}</span>
+                <span key={area} className="bg-gray-100 text-gray-700 px-3 py-1.5 rounded-lg text-sm font-medium">{area}</span>
               );
             })}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-6 border-t border-neutral-100">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-6 border-t border-gray-100">
             <span className="flex items-center gap-2 font-medium text-emerald-800 bg-emerald-50 px-4 py-2 rounded-lg w-fit"><CheckCircle2 size={20} className="text-emerald-500" /> Devis gratuit</span>
             <span className="flex items-center gap-2 font-medium text-emerald-800 bg-emerald-50 px-4 py-2 rounded-lg w-fit"><CheckCircle2 size={20} className="text-emerald-500" /> R&eacute;ponse en -1h</span>
             <span className="flex items-center gap-2 font-medium text-emerald-800 bg-emerald-50 px-4 py-2 rounded-lg w-fit"><CheckCircle2 size={20} className="text-emerald-500" /> Sans engagement</span>
@@ -129,17 +129,17 @@ export default function LocationPage({ loc }: { loc: Location }) {
       </section>
 
       <section className="py-12 px-4">
-        <div className="max-w-md mx-auto bg-emerald-800 text-white p-8 rounded-3xl text-center shadow-lg">
+        <div className="max-w-md mx-auto bg-emerald-800 text-white p-8 rounded-lg text-center shadow-md">
           <h2 className="text-xl font-bold mb-3">Besoin d&apos;un jardinier &agrave; {loc.name} ?</h2>
           <p className="text-emerald-100 mb-6">Envoyez une photo de votre jardin pour un devis gratuit !</p>
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-6 py-4 rounded-xl font-bold transition-transform active:scale-95 w-full">
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-6 py-4 rounded-md font-bold transition-transform active:scale-95 w-full">
             <MessageCircle size={24} /> Contacter {GARDENER_NAME} sur WhatsApp
           </a>
         </div>
       </section>
 
       <div className="md:hidden fixed bottom-6 left-0 right-0 px-4 z-50">
-        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] text-white w-full py-4 rounded-2xl shadow-2xl font-bold text-lg border-2 border-white/20">
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] text-white w-full py-4 rounded-md shadow-lg font-bold text-lg border-2 border-white/20">
           <MessageCircle size={24} /> Demander un devis
         </a>
       </div>

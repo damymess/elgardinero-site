@@ -25,7 +25,7 @@ export const services: Service[] = [
       "Evacuation systematique des branches",
       "Conseils sur les periodes ideales de taille",
     ],
-    priceRange: "200 - 800 DH",
+    priceRange: "150 - 800 DH",
     image: "/service-taille.jpg",
   },
   {
@@ -42,7 +42,7 @@ export const services: Service[] = [
       "Traitement anti-mousse et maladies",
       "Regarnissage des zones clairsemees",
     ],
-    priceRange: "150 - 400 DH",
+    priceRange: "150 - 500 DH",
     image: "/service-pelouse.jpg",
   },
   {
@@ -59,7 +59,7 @@ export const services: Service[] = [
       "Evacuation de tous les dechets verts",
       "Nettoyage des allees et terrasses",
     ],
-    priceRange: "500 - 1500 DH",
+    priceRange: "500 - 2000 DH",
     image: "/service-nettoyage.jpg",
   },
   {
@@ -95,6 +95,40 @@ export const services: Service[] = [
     ],
     priceRange: "Sur devis",
     image: "/apres.jpg",
+  },
+  {
+    slug: "elagage-palmiers",
+    name: "Elagage Palmiers",
+    icon: "TreePalm",
+    description: "Elagage professionnel de palmiers a Rabat. Taille sanitaire et esthetique des washingtonia, phoenix et palmiers dattiers. Retrait des palmes seches et nettoyage du stipe.",
+    heroText: "Des palmiers sains et esthetiques grace a un elagage professionnel adapte a chaque espece.",
+    details: "Les palmiers sont omnipresents dans les jardins de Rabat et necessitent un entretien regulier. Les palmes seches doivent etre retirees pour des raisons esthetiques mais aussi de securite (risque de chute). Je realise l'elagage de tous types de palmiers : washingtonia, phoenix, palmier dattier, palmier des Canaries. L'intervention comprend la taille des palmes seches, le nettoyage du stipe (tronc), le retrait des grappes de fruits et l'evacuation de tous les dechets vegetaux.",
+    benefits: [
+      "Retrait des palmes seches et jaunies",
+      "Taille sanitaire et esthetique",
+      "Nettoyage du stipe (tronc)",
+      "Evacuation des dechets vegetaux",
+      "Intervention en hauteur securisee",
+    ],
+    priceRange: "200 - 600 DH",
+    image: "/service-taille.jpg",
+  },
+  {
+    slug: "arrosage-automatique",
+    name: "Arrosage Automatique",
+    icon: "Droplets",
+    description: "Installation et entretien de systemes d'arrosage automatique a Rabat. Asperseurs, goutte-a-goutte, programmation et reparation pour pelouses et massifs.",
+    heroText: "Un systeme d'arrosage automatique bien concu pour un jardin verdoyant sans effort et des economies d'eau.",
+    details: "L'arrosage automatique est indispensable a Rabat ou les etes sont chauds et secs. Je concois et installe des systemes adaptes a votre jardin : asperseurs rotatifs pour les pelouses, goutte-a-goutte pour les massifs et les haies, et programmateurs pour automatiser l'arrosage aux heures optimales (tot le matin ou en soiree). Je repare egalement les systemes existants : remplacement de tuyeres, ajustement de la pression, reprogrammation des cycles.",
+    benefits: [
+      "Etude et conception du systeme",
+      "Installation asperseurs et goutte-a-goutte",
+      "Programmation et automatisation",
+      "Entretien et reparation",
+      "Conseil economie d'eau",
+    ],
+    priceRange: "Sur devis",
+    image: "/hero-garden.jpg",
   },
 ];
 

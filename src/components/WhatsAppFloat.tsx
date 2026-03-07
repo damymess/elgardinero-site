@@ -14,7 +14,7 @@ export default function WhatsAppFloat() {
         href={whatsappUrl}
         target="_blank"
         rel="noopener noreferrer"
-        className="flex items-center justify-center gap-2 bg-[#25D366] text-white w-full py-3.5 rounded-2xl shadow-lg font-bold text-base"
+        className="flex items-center justify-center gap-2 bg-[#25D366] text-white w-full py-3.5 rounded-md shadow-md font-bold text-base"
       >
         <MessageCircle size={22} />
         Demander un devis gratuit
