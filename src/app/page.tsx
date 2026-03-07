@@ -79,25 +79,27 @@ export default function Home() {
       {/* ===== HERO BENTO ===== */}
       <section className="pt-22 pb-6 px-4 md:px-6">
         {/* Mobile : animation en fond + texte par-dessus */}
-        <div className="md:hidden max-w-6xl mx-auto rounded-xl overflow-hidden relative min-h-[480px] border border-gray-200 shadow-sm">
-          <div className="absolute inset-0">
+        <div className="md:hidden max-w-6xl mx-auto rounded-xl overflow-hidden relative min-h-[520px] border border-gray-200 shadow-sm bg-emerald-900">
+          <div className="absolute top-[-64px] left-0 right-0 bottom-0">
             <SimpleTree />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-emerald-900/20 to-transparent" />
-          <div className="relative z-10 flex flex-col justify-end h-full p-5">
-            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full mb-4 border border-white/30 w-fit">
-              <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
-              </span>
-              <span className="text-xs font-medium text-white">Disponible</span>
+          <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/85 via-emerald-900/30 to-emerald-900/70" />
+          <div className="relative z-10 flex flex-col justify-between h-full p-5 min-h-[520px]">
+            <div>
+              <div className="inline-flex items-center gap-2 bg-emerald-700/60 backdrop-blur-sm px-3 py-1.5 rounded-full mb-4 border border-emerald-600/50 w-fit">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span className="text-xs font-medium text-emerald-100">Disponible</span>
+              </div>
+              <h1 className="text-xl font-extrabold leading-tight mb-2 text-emerald-50 drop-shadow-md whitespace-nowrap">
+                Votre Jardinier de Confiance
+              </h1>
+              <p className="text-emerald-200 text-sm drop-shadow-sm">
+                Entretien, taille, am&eacute;nagement et nettoyage &agrave; Rabat, T&eacute;mara &amp; Sal&eacute;.
+              </p>
             </div>
-            <h1 className="text-2xl font-extrabold leading-tight mb-3 text-white">
-              Votre Jardinier<br />de Confiance
-            </h1>
-            <p className="text-white/80 text-sm mb-6">
-              Entretien, taille, am&eacute;nagement et nettoyage &agrave; Rabat, T&eacute;mara &amp; Sal&eacute;.
-            </p>
             <div className="flex flex-col gap-2">
               <a
                 href={whatsappUrl}
@@ -110,7 +112,7 @@ export default function Home() {
               </a>
               <a
                 href={`tel:${PHONE_LINK}`}
-                className="flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white px-5 py-3 rounded-md font-bold backdrop-blur-sm transition-all text-sm"
+                className="flex items-center justify-center gap-2 text-white px-5 py-3 rounded-md font-bold text-sm transition-all active:scale-95 backdrop-blur-xl bg-gradient-to-b from-white/30 to-white/15 border border-white/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4),0_4px_12px_rgba(0,0,0,0.15)] hover:from-white/40 hover:to-white/20"
               >
                 <Phone size={18} />
                 {PHONE_DISPLAY}
@@ -133,7 +135,7 @@ export default function Home() {
                 <span className="text-xs font-medium">Disponible</span>
               </div>
               <h1 className="text-3xl font-extrabold leading-tight mb-3">
-                Votre Jardinier<br />de Confiance
+                Votre Jardinier de Confiance
               </h1>
               <p className="text-emerald-100 text-base">
                 Entretien, taille, am&eacute;nagement et nettoyage &agrave; Rabat, T&eacute;mara &amp; Sal&eacute;.
@@ -151,7 +153,7 @@ export default function Home() {
               </a>
               <a
                 href={`tel:${PHONE_LINK}`}
-                className="flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white px-5 py-3 rounded-md font-bold backdrop-blur-sm transition-all text-sm"
+                className="flex items-center justify-center gap-2 text-white px-5 py-3 rounded-md font-bold text-sm transition-all active:scale-95 backdrop-blur-xl bg-gradient-to-b from-white/30 to-white/15 border border-white/40 shadow-[inset_0_1px_1px_rgba(255,255,255,0.4),0_4px_12px_rgba(0,0,0,0.15)] hover:from-white/40 hover:to-white/20"
               >
                 <Phone size={18} />
                 {PHONE_DISPLAY}

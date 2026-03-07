@@ -380,7 +380,7 @@ export function SimpleTree() {
 
   return (
     <div className="w-full h-full relative overflow-hidden">
-      <canvas ref={canvasRef} className="absolute inset-0 cursor-pointer" onClick={handleClick} />
+      <canvas ref={canvasRef} className="absolute inset-0 w-full h-full cursor-pointer" onClick={handleClick} />
     </div>
   )
 }
