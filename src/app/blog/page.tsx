@@ -9,7 +9,7 @@ import Breadcrumb from "@/components/Breadcrumb";
 export const metadata: Metadata = {
   title: "Blog Jardinage Rabat | Conseils & Astuces | El Gardinero",
   description:
-    "Conseils jardinage, entretien pelouse, taille, elagage et amenagement exterieur a Rabat. Articles pratiques par Youssef, jardinier professionnel.",
+    "Conseils jardinage, entretien pelouse, taille, elagage et amenagement exterieur a Rabat. Articles pratiques par Adil, jardinier professionnel.",
   keywords: [
     "blog jardinage rabat",
     "conseils jardinier maroc",
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Blog Jardinage Rabat | El Gardinero",
     description:
-      "Conseils jardinage, entretien et amenagement exterieur a Rabat par Youssef, jardinier professionnel.",
+      "Conseils jardinage, entretien et amenagement exterieur a Rabat par Adil, jardinier professionnel.",
     url: "https://elgardinero.ma/blog",
     siteName: "El Gardinero",
     locale: "fr_MA",

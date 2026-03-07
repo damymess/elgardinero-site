@@ -59,7 +59,7 @@ const faqJsonLd = {
 };
 
 export default function Home() {
-  const GARDENER_NAME = "Youssef";
+  const GARDENER_NAME = "Adil";
   const PHONE_DISPLAY = "06 49 23 15 45";
   const PHONE_LINK = "+212649231545";
   const WHATSAPP_NUM = "212649231545";
@@ -333,7 +333,7 @@ export default function Home() {
                 {[...Array(5)].map((_, i) => <Star key={i} size={18} className="fill-amber-400 text-amber-400" />)}
               </div>
               <blockquote className="text-lg text-gray-700 leading-relaxed mb-6">
-                &laquo; Youssef a transform&eacute; mon jardin en une journ&eacute;e. Ponctuel, soigneux et tr&egrave;s honn&ecirc;te sur les prix. Je le recommande &agrave; toutes mes voisines ! &raquo;
+                &laquo; Adil a transform&eacute; mon jardin en une journ&eacute;e. Ponctuel, soigneux et tr&egrave;s honn&ecirc;te sur les prix. Je le recommande &agrave; toutes mes voisines ! &raquo;
               </blockquote>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-sm">FZ</div>
@@ -367,7 +367,7 @@ export default function Home() {
                 {[...Array(5)].map((_, i) => <Star key={i} size={18} className="fill-amber-400 text-amber-400" />)}
               </div>
               <blockquote className="text-gray-700 leading-relaxed mb-6">
-                &laquo; Mon jardin &eacute;tait abandonn&eacute; depuis 2 ans. Youssef l&apos;a remis en &eacute;tat en 2 jours. R&eacute;sultat impeccable ! &raquo;
+                &laquo; Mon jardin &eacute;tait abandonn&eacute; depuis 2 ans. Adil l&apos;a remis en &eacute;tat en 2 jours. R&eacute;sultat impeccable ! &raquo;
               </blockquote>
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold text-sm">AL</div>

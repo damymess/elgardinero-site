@@ -44,7 +44,7 @@ src/
 ```
 
 ## Configuration jardinier
-- Nom : Youssef
+- Nom : Adil
 - Zone : Rabat (Hay Riad, Souissi, Agdal), Sale, Temara, Harhoura
 - Contact : WhatsApp + telephone (numeros a configurer)
 - Langue du site : francais

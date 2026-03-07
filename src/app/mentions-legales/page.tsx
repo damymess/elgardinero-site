@@ -22,7 +22,7 @@ export default function MentionsLegales() {
             <h2 className="font-bold text-lg text-gray-900 mb-3">&Eacute;diteur du site</h2>
             <p>
               <strong>El Gardinero</strong><br />
-              Youssef — Artisan jardinier ind&eacute;pendant<br />
+              Adil — Artisan jardinier ind&eacute;pendant<br />
               Rabat, Maroc<br />
               T&eacute;l&eacute;phone : 06 49 23 15 45<br />
               Email : contact@elgardinero.ma

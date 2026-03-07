@@ -4,7 +4,7 @@ import { locations, type Location } from "@/data/locations";
 import { articles } from "@/data/articles";
 import Breadcrumb from "@/components/Breadcrumb";
 
-const GARDENER_NAME = "Youssef";
+const GARDENER_NAME = "Adil";
 const PHONE_DISPLAY = "06 49 23 15 45";
 const PHONE_LINK = "+212649231545";
 const WHATSAPP_NUM = "212649231545";
