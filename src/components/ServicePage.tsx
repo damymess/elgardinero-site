@@ -139,7 +139,11 @@ export default function ServicePage({ service }: { service: Service }) {
                   .filter((a) => a.relatedService === service.slug)
                   .slice(0, 3)
                   .map((a) => (
-                    <Link key={a.slug} href={`/blog/${a.slug}`} className="block bg-gray-50 hover:bg-gray-100 px-4 py-3 rounded-lg transition-colors">
+                    <Link key={a.slug} href={`/blog/${a.slug}`} className="block bg-gray-50 hover:bg-emerald-50 px-4 py-3 rounded-lg transition-colors border border-gray-100 hover:border-emerald-200">
+                      <div className="flex items-center gap-2 mb-1">
+                        <span className="text-xs font-semibold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded">{a.category}</span>
+                        <span className="text-xs text-gray-400">{new Date(a.publishDate).toLocaleDateString("fr-FR", { day: "numeric", month: "long", year: "numeric" })}</span>
+                      </div>
                       <span className="font-medium text-gray-900">{a.title}</span>
                       <p className="text-gray-500 text-sm mt-1">{a.excerpt}</p>
                     </Link>
