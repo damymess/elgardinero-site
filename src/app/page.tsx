@@ -170,7 +170,7 @@ export default function Home() {
       <section className="px-4 md:px-6 pb-4">
         <div className="max-w-6xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-4">
           <BentoStat value="+150" label="Jardins entretenus" />
-          <BentoStat value="8 ans" label="D'exp&eacute;rience" />
+          <BentoStat value="18 ans" label="D'exp&eacute;rience" />
           <BentoStat value="4.9/5" label="Satisfaction" accent />
           <BentoStat value="<1h" label="Temps de r&eacute;ponse" />
         </div>
@@ -440,7 +440,7 @@ export default function Home() {
           <div className="md:col-span-2 bg-white p-5 md:p-10 rounded-xl border border-gray-200 shadow-sm">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">&Agrave; propos de {GARDENER_NAME}</h2>
             <p className="text-gray-600 leading-relaxed text-lg mb-6">
-              Bonjour, je suis artisan jardinier ind&eacute;pendant. Mon objectif est simple : vous offrir un service de qualit&eacute;, ponctuel et honn&ecirc;te. En faisant appel &agrave; moi, vous soutenez un p&egrave;re de famille travailleur.
+              Bonjour, je suis artisan jardinier ind&eacute;pendant avec 18 ans d&apos;exp&eacute;rience. Mon objectif est simple : vous offrir un service de qualit&eacute;, ponctuel et honn&ecirc;te. En faisant appel &agrave; moi, vous soutenez un p&egrave;re de famille travailleur.
             </p>
             <div className="flex flex-wrap gap-3">
               <span className="flex items-center gap-2 font-medium text-emerald-800 bg-emerald-50 px-4 py-2 rounded-xl text-sm"><CheckCircle2 size={18} className="text-emerald-500" /> Travail rigoureux</span>
