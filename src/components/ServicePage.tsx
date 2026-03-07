@@ -14,8 +14,53 @@ export default function ServicePage({ service }: { service: Service }) {
   );
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUM}?text=${whatsappMessage}`;
 
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: service.name,
+    description: service.description,
+    provider: {
+      "@type": "LocalBusiness",
+      name: "El Gardinero",
+      telephone: "+212649231545",
+      url: "https://elgardinero.ma",
+    },
+    areaServed: [
+      { "@type": "City", name: "Rabat" },
+      { "@type": "City", name: "Sale" },
+      { "@type": "City", name: "Temara" },
+      { "@type": "City", name: "Harhoura" },
+    ],
+    ...(service.priceRange !== "Sur devis" && {
+      offers: {
+        "@type": "Offer",
+        priceCurrency: "MAD",
+        price: service.priceRange,
+        availability: "https://schema.org/InStock",
+      },
+    }),
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://elgardinero.ma" },
+      { "@type": "ListItem", position: 2, name: "Services", item: "https://elgardinero.ma/#services" },
+      { "@type": "ListItem", position: 3, name: service.name, item: `https://elgardinero.ma/services/${service.slug}` },
+    ],
+  };
+
   return (
     <main className="min-h-screen bg-neutral-100 text-neutral-800 pb-24 md:pb-0">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
       <section className="bg-emerald-800 text-white pt-12 pb-16 px-4 rounded-b-[2.5rem] shadow-lg">
         <div className="max-w-3xl mx-auto">
           <Link href="/#services" className="inline-flex items-center gap-2 text-emerald-200 hover:text-white mb-8 text-sm transition-colors">

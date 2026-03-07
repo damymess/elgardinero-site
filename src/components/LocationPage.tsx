@@ -20,8 +20,42 @@ export default function LocationPage({ loc }: { loc: Location }) {
   );
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUM}?text=${whatsappMessage}`;
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      { "@type": "ListItem", position: 1, name: "Accueil", item: "https://elgardinero.ma" },
+      { "@type": "ListItem", position: 2, name: `Jardinier ${loc.name}`, item: `https://elgardinero.ma/jardinier-${loc.slug}` },
+    ],
+  };
+
+  const localServiceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: `Jardinier a ${loc.name}`,
+    description: loc.description,
+    provider: {
+      "@type": "LocalBusiness",
+      name: "El Gardinero",
+      telephone: "+212649231545",
+      url: "https://elgardinero.ma",
+    },
+    areaServed: {
+      "@type": loc.name === "Rabat" ? "City" : "Place",
+      name: loc.name,
+    },
+  };
+
   return (
     <main className="min-h-screen bg-neutral-100 text-neutral-800 pb-24 md:pb-0">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localServiceJsonLd) }}
+      />
       <section className="bg-emerald-800 text-white pt-12 pb-16 px-4 rounded-b-[2.5rem] shadow-lg">
         <div className="max-w-3xl mx-auto">
           <Link href="/" className="inline-flex items-center gap-2 text-emerald-200 hover:text-white mb-8 text-sm transition-colors">

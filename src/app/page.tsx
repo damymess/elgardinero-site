@@ -2,6 +2,61 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, MessageCircle, Scissors, Leaf, Trash2, Sprout, CheckCircle2, MapPin, Star, Camera, FileText, Hammer, ChevronDown, Clock, TreePine, ShieldCheck } from 'lucide-react';
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "Quelles sont vos zones d'intervention ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "J'interviens dans tout Rabat (Hay Riad, Souissi, Agdal, Hassan, Yacoub El Mansour...), ainsi qu'a Sale, Temara et Harhoura.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Comment obtenir un devis jardinier a Rabat ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Envoyez-moi une ou plusieurs photos de votre jardin sur WhatsApp. Je vous reponds sous 1 heure avec un devis detaille, c'est gratuit !",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Quels sont vos delais d'intervention ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "En general sous 24 a 48 heures. Pour les urgences, j'essaie de venir le jour meme.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Fournissez-vous le materiel de jardinage ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Oui, je viens avec tout mon materiel professionnel : tondeuse, taille-haie, secateurs, souffleur, etc.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Proposez-vous des formules d'entretien regulier ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Oui ! Je propose des forfaits mensuels ou bimensuels a partir de 500 DH/mois. C'est la solution la plus economique pour un jardin toujours impeccable.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Que faites-vous des dechets verts ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Je m'occupe de tout : ramassage, nettoyage et evacuation des dechets verts. Jardin propre garanti.",
+      },
+    },
+  ],
+};
+
 export default function Home() {
   const GARDENER_NAME = "Youssef";
   const PHONE_DISPLAY = "06 49 23 15 45";
@@ -13,6 +68,12 @@ export default function Home() {
 
   return (
     <main className="min-h-screen bg-neutral-100 font-sans text-neutral-800 pb-20 md:pb-0">
+
+      {/* FAQ Schema JSON-LD */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
 
       {/* ===== HERO BENTO ===== */}
       <section className="pt-18 pb-6 px-4 md:px-6">
