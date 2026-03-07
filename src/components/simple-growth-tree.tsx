@@ -307,27 +307,15 @@ export function SimpleTree() {
     const ctx = canvas.getContext("2d")
     if (!ctx) return
 
-    // Set canvas size
-    canvas.width = window.innerWidth
-    canvas.height = window.innerHeight
+    const parent = canvas.parentElement
+    if (!parent) return
 
-    // Clean, elegant background
-    const bgColor = hsbToRgb(42, 12, 248)
-    ctx.fillStyle = bgColor
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    // Use parent container size
+    canvas.width = parent.clientWidth
+    canvas.height = parent.clientHeight
 
-    // Very subtle vignette
-    const gradient = ctx.createRadialGradient(
-      canvas.width / 2,
-      canvas.height / 2,
-      0,
-      canvas.width / 2,
-      canvas.height / 2,
-      Math.max(canvas.width, canvas.height) * 0.9,
-    )
-    gradient.addColorStop(0, "rgba(0,0,0,0)")
-    gradient.addColorStop(1, "rgba(0,0,0,0.02)")
-    ctx.fillStyle = gradient
+    // Clean white background
+    ctx.fillStyle = "#ffffff"
     ctx.fillRect(0, 0, canvas.width, canvas.height)
 
     // Create elegant tree
@@ -392,17 +380,8 @@ export function SimpleTree() {
   }, [setup, draw])
 
   return (
-    <div className="w-full h-screen overflow-hidden">
+    <div className="w-full h-full relative overflow-hidden">
       <canvas ref={canvasRef} className="absolute inset-0 cursor-pointer" onClick={handleClick} />
-
-      {/* Minimal elegant overlay */}
-      <div className="absolute bottom-6 right-6 text-xs text-black/20 font-light">Click to grow a new tree</div>
-
-      {/* Clean title */}
-      <div className="absolute top-6 left-6 text-black/25">
-        <h1 className="text-2xl font-extralight tracking-wider">Simple Tree</h1>
-        <p className="text-sm font-light mt-1 opacity-80">Elegant growth</p>
-      </div>
     </div>
   )
 }

@@ -13,6 +13,10 @@ export default function Navbar() {
         <Link href="/" className="font-extrabold text-gray-900 text-lg tracking-tight">
           El Gardinero
         </Link>
+        <div className="hidden md:flex items-center gap-6">
+          <Link href="/#services" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">Services &amp; Tarifs</Link>
+          <Link href="/blog" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">Blog</Link>
+        </div>
         <div className="flex items-center gap-3">
           <a
             href={`tel:${PHONE_LINK}`}
@@ -25,7 +29,7 @@ export default function Navbar() {
             href={whatsappUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-4 py-2 rounded-md font-bold text-sm transition-transform active:scale-95"
+            className="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-4 py-2 rounded-md font-bold text-sm transition-transform active:scale-95"
           >
             <MessageCircle size={16} />
             <span className="hidden sm:inline">WhatsApp</span>

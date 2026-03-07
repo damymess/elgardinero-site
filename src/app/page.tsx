@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, MessageCircle, Scissors, Leaf, Trash2, Sprout, CheckCircle2, MapPin, Star, Camera, FileText, Hammer, ChevronDown, Clock, TreePine, TreePalm, Droplets, ShieldCheck } from 'lucide-react';
+import { SimpleTree } from '@/components/simple-growth-tree';
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -76,61 +77,91 @@ export default function Home() {
       />
 
       {/* ===== HERO BENTO ===== */}
-      <section className="pt-18 pb-6 px-4 md:px-6">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-4">
-
-          {/* Hero principal — span 2 colonnes */}
-          <div className="md:col-span-2 bg-emerald-800 text-white p-6 md:p-12 rounded-xl relative overflow-hidden min-h-[300px] md:min-h-[340px] flex flex-col justify-between">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(16,185,129,0.3),transparent_60%)]" />
-            <div className="relative z-10">
-              <div className="inline-flex items-center gap-2 bg-emerald-700/50 px-4 py-2 rounded-full mb-6 border border-emerald-600/50">
-                <span className="relative flex h-2.5 w-2.5">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-                </span>
-                <span className="text-sm font-medium">Disponible maintenant</span>
-              </div>
-              <h1 className="text-3xl md:text-5xl font-extrabold leading-tight mb-4">
-                Votre Jardinier<br />de Confiance
-              </h1>
-              <p className="text-emerald-100 text-lg max-w-lg">
-                Entretien de villas, taille, am&eacute;nagement et grand nettoyage &agrave; Rabat, T&eacute;mara &amp; Sal&eacute;.
-              </p>
+      <section className="pt-22 pb-6 px-4 md:px-6">
+        {/* Mobile : animation en fond + texte par-dessus */}
+        <div className="md:hidden max-w-6xl mx-auto rounded-xl overflow-hidden relative min-h-[420px] border border-gray-200 shadow-sm">
+          <div className="absolute inset-0">
+            <SimpleTree />
+          </div>
+          <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/90 via-emerald-900/40 to-transparent" />
+          <div className="relative z-10 flex flex-col justify-end h-full p-5">
+            <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full mb-4 border border-white/30 w-fit">
+              <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+              </span>
+              <span className="text-xs font-medium text-white">Disponible</span>
             </div>
-            <div className="relative z-10 flex flex-col sm:flex-row gap-3 mt-8">
+            <h1 className="text-2xl font-extrabold leading-tight mb-3 text-white">
+              Votre Jardinier<br />de Confiance
+            </h1>
+            <p className="text-white/80 text-sm mb-6">
+              Entretien, taille, am&eacute;nagement et nettoyage &agrave; Rabat, T&eacute;mara &amp; Sal&eacute;.
+            </p>
+            <div className="flex flex-col gap-2">
               <a
                 href={whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-6 py-3.5 rounded-md font-bold transition-transform active:scale-95 shadow-md"
+                className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3 rounded-md font-bold transition-transform active:scale-95 shadow-md text-sm"
               >
-                <MessageCircle size={20} />
-                Devis via WhatsApp
+                <MessageCircle size={18} />
+                Devis WhatsApp
               </a>
               <a
                 href={`tel:${PHONE_LINK}`}
-                className="flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white px-6 py-3.5 rounded-md font-bold backdrop-blur-sm transition-all"
+                className="flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white px-5 py-3 rounded-md font-bold backdrop-blur-sm transition-all text-sm"
               >
-                <Phone size={20} />
+                <Phone size={18} />
+                {PHONE_DISPLAY}
+              </a>
+            </div>
+          </div>
+        </div>
+
+        {/* Desktop : grille 1 + 2 colonnes */}
+        <div className="hidden md:grid max-w-6xl mx-auto grid-cols-3 gap-4">
+          {/* Hero texte — 1 colonne */}
+          <div className="bg-emerald-800 text-white p-8 rounded-xl relative overflow-hidden flex flex-col justify-between">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_30%,rgba(16,185,129,0.3),transparent_60%)]" />
+            <div className="relative z-10">
+              <div className="inline-flex items-center gap-2 bg-emerald-700/50 px-3 py-1.5 rounded-full mb-4 border border-emerald-600/50">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                <span className="text-xs font-medium">Disponible</span>
+              </div>
+              <h1 className="text-3xl font-extrabold leading-tight mb-3">
+                Votre Jardinier<br />de Confiance
+              </h1>
+              <p className="text-emerald-100 text-base">
+                Entretien, taille, am&eacute;nagement et nettoyage &agrave; Rabat, T&eacute;mara &amp; Sal&eacute;.
+              </p>
+            </div>
+            <div className="relative z-10 flex flex-col gap-2 mt-6">
+              <a
+                href={whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-5 py-3 rounded-md font-bold transition-transform active:scale-95 shadow-md text-sm"
+              >
+                <MessageCircle size={18} />
+                Devis WhatsApp
+              </a>
+              <a
+                href={`tel:${PHONE_LINK}`}
+                className="flex items-center justify-center gap-2 bg-white/15 hover:bg-white/25 text-white px-5 py-3 rounded-md font-bold backdrop-blur-sm transition-all text-sm"
+              >
+                <Phone size={18} />
                 {PHONE_DISPLAY}
               </a>
             </div>
           </div>
 
-          {/* Carte photo hero */}
-          <div className="bg-white rounded-xl overflow-hidden relative min-h-[240px] md:min-h-0 border border-gray-200 shadow-sm">
-            <Image
-              src="/hero-garden.jpg"
-              alt="Jardin entretenu par Youssef - jardinier Rabat"
-              fill
-              className="object-cover"
-              sizes="(max-width: 768px) 100vw, 33vw"
-              priority
-            />
-            <div className="absolute bottom-4 left-4 right-4 bg-white/90 backdrop-blur-sm rounded-xl p-3 flex items-center gap-2">
-              <MapPin size={16} className="text-emerald-700 shrink-0" />
-              <p className="text-sm font-bold text-emerald-900">Rabat &amp; environs</p>
-            </div>
+          {/* Animation arbre — 2 colonnes */}
+          <div className="col-span-2 bg-white rounded-xl overflow-hidden relative min-h-[340px] border border-gray-200 shadow-sm">
+            <SimpleTree />
           </div>
         </div>
       </section>
@@ -146,7 +177,7 @@ export default function Home() {
       </section>
 
       {/* ===== SERVICES BENTO GRID ===== */}
-      <section className="px-4 md:px-6 py-6">
+      <section id="services" className="px-4 md:px-6 py-6 scroll-mt-16">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">Mes Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
@@ -419,7 +450,7 @@ export default function Home() {
           </div>
 
           {/* CTA carte */}
-          <div className="bg-[#25D366] text-white p-5 md:p-8 rounded-xl flex flex-col justify-between">
+          <div className="bg-emerald-600 text-white p-5 md:p-8 rounded-xl flex flex-col justify-between">
             <div>
               <MessageCircle size={32} className="mb-4" />
               <h3 className="text-xl font-bold mb-2">Envoyez une photo de votre jardin</h3>
@@ -429,7 +460,7 @@ export default function Home() {
               href={whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-2 bg-white text-emerald-800 px-6 py-3.5 rounded-md font-bold transition-transform active:scale-95 hover:bg-white"
+              className="flex items-center justify-center gap-2 bg-white text-emerald-700 px-6 py-3.5 rounded-md font-bold transition-transform active:scale-95 hover:bg-gray-50"
             >
               Ouvrir WhatsApp
             </a>
@@ -468,7 +499,7 @@ export default function Home() {
                 <a href={`tel:${PHONE_LINK}`} className="flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-colors">
                   <Phone size={14} /> {PHONE_DISPLAY}
                 </a>
-                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-[#25D366] text-sm transition-colors">
+                <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-gray-400 hover:text-emerald-500 text-sm transition-colors">
                   <MessageCircle size={14} /> WhatsApp
                 </a>
               </div>

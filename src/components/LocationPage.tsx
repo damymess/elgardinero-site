@@ -1,6 +1,8 @@
 import Link from "next/link";
-import { MessageCircle, Phone, CheckCircle2, MapPin, ArrowLeft, Leaf, Scissors, Trash2, Sprout } from "lucide-react";
+import { MessageCircle, Phone, CheckCircle2, MapPin, Leaf, Scissors, Trash2, Sprout, TreePalm, Droplets } from "lucide-react";
 import { locations, type Location } from "@/data/locations";
+import { articles } from "@/data/articles";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const GARDENER_NAME = "Youssef";
 const PHONE_DISPLAY = "06 49 23 15 45";
@@ -8,10 +10,12 @@ const PHONE_LINK = "+212649231545";
 const WHATSAPP_NUM = "212649231545";
 
 const services = [
-  { icon: <Leaf size={20} className="text-emerald-600" />, name: "Tonte de pelouse" },
-  { icon: <Scissors size={20} className="text-emerald-600" />, name: "Taille de haies" },
-  { icon: <Trash2 size={20} className="text-emerald-600" />, name: "Grand nettoyage" },
-  { icon: <Sprout size={20} className="text-emerald-600" />, name: "Plantation & massifs" },
+  { icon: <Leaf size={20} className="text-emerald-600" />, name: "Tonte de pelouse", slug: "entretien-pelouse" },
+  { icon: <Scissors size={20} className="text-emerald-600" />, name: "Taille de haies", slug: "taille-elagage" },
+  { icon: <Trash2 size={20} className="text-emerald-600" />, name: "Grand nettoyage", slug: "nettoyage-jardin" },
+  { icon: <Sprout size={20} className="text-emerald-600" />, name: "Plantation & massifs", slug: "plantation-fleurs" },
+  { icon: <TreePalm size={20} className="text-emerald-600" />, name: "Elagage palmiers", slug: "elagage-palmiers" },
+  { icon: <Droplets size={20} className="text-emerald-600" />, name: "Arrosage automatique", slug: "arrosage-automatique" },
 ];
 
 export default function LocationPage({ loc }: { loc: Location }) {
@@ -58,9 +62,11 @@ export default function LocationPage({ loc }: { loc: Location }) {
       />
       <section className="bg-emerald-800 text-white pt-12 pb-16 px-4 rounded-b-lg shadow-md">
         <div className="max-w-3xl mx-auto">
-          <Link href="/" className="inline-flex items-center gap-2 text-emerald-200 hover:text-white mb-8 text-sm transition-colors">
-            <ArrowLeft size={16} /> Retour
-          </Link>
+          <div className="mb-8">
+            <Breadcrumb items={[
+              { label: `Jardinier ${loc.name}` },
+            ]} />
+          </div>
           <div className="inline-flex items-center gap-2 bg-emerald-700/50 px-4 py-2 rounded-full mb-6 border border-emerald-600/50">
             <MapPin size={16} />
             <span className="text-sm font-medium">{loc.fullName}</span>
@@ -70,7 +76,7 @@ export default function LocationPage({ loc }: { loc: Location }) {
           </h1>
           <p className="text-lg text-emerald-100 mb-8 max-w-2xl">{loc.heroText}</p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-8 py-4 rounded-md font-bold text-lg transition-transform active:scale-95 shadow-md">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-md font-bold text-lg transition-transform active:scale-95 shadow-md">
               <MessageCircle size={24} /> Devis gratuit WhatsApp
             </a>
             <a href={`tel:${PHONE_LINK}`} className="flex items-center justify-center gap-2 bg-white text-emerald-900 hover:bg-gray-50 px-8 py-4 rounded-md font-bold text-lg transition-transform active:scale-95 shadow-md">
@@ -88,10 +94,10 @@ export default function LocationPage({ loc }: { loc: Location }) {
           <h3 className="font-bold text-lg text-gray-900 mb-4">Services disponibles &agrave; {loc.name}</h3>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-8">
             {services.map((s) => (
-              <div key={s.name} className="flex items-center gap-3 bg-emerald-50 px-4 py-3 rounded-lg">
+              <Link key={s.name} href={`/services/${s.slug}`} className="flex items-center gap-3 bg-emerald-50 px-4 py-3 rounded-lg hover:bg-emerald-100 transition-colors">
                 {s.icon}
                 <span className="font-medium text-emerald-900">{s.name}</span>
-              </div>
+              </Link>
             ))}
           </div>
 
@@ -128,18 +134,35 @@ export default function LocationPage({ loc }: { loc: Location }) {
         </div>
       </section>
 
+      {/* Articles conseils */}
+      <section className="px-4 max-w-3xl mx-auto pb-8">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8">
+          <h3 className="font-bold text-lg text-gray-900 mb-4">Nos conseils jardinage</h3>
+          <div className="space-y-2 mb-4">
+            {articles.slice(0, 4).map((a) => (
+              <Link key={a.slug} href={`/blog/${a.slug}`} className="block bg-gray-50 hover:bg-gray-100 px-4 py-3 rounded-lg transition-colors">
+                <span className="font-medium text-gray-900">{a.title}</span>
+              </Link>
+            ))}
+          </div>
+          <Link href="/blog" className="text-emerald-700 font-semibold text-sm hover:text-emerald-900 transition-colors">
+            Voir tous les articles &rarr;
+          </Link>
+        </div>
+      </section>
+
       <section className="py-12 px-4">
         <div className="max-w-md mx-auto bg-emerald-800 text-white p-8 rounded-lg text-center shadow-md">
           <h2 className="text-xl font-bold mb-3">Besoin d&apos;un jardinier &agrave; {loc.name} ?</h2>
           <p className="text-emerald-100 mb-6">Envoyez une photo de votre jardin pour un devis gratuit !</p>
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-6 py-4 rounded-md font-bold transition-transform active:scale-95 w-full">
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-4 rounded-md font-bold transition-transform active:scale-95 w-full">
             <MessageCircle size={24} /> Contacter {GARDENER_NAME} sur WhatsApp
           </a>
         </div>
       </section>
 
       <div className="md:hidden fixed bottom-6 left-0 right-0 px-4 z-50">
-        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] text-white w-full py-4 rounded-md shadow-lg font-bold text-lg border-2 border-white/20">
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-emerald-600 text-white w-full py-4 rounded-md shadow-lg font-bold text-lg border-2 border-white/20">
           <MessageCircle size={24} /> Demander un devis
         </a>
       </div>

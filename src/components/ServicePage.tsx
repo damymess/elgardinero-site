@@ -1,7 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
-import { MessageCircle, Phone, CheckCircle2, ArrowLeft } from "lucide-react";
+import { MessageCircle, Phone, CheckCircle2, MapPin, BookOpen } from "lucide-react";
 import { type Service } from "@/data/services";
+import { locations } from "@/data/locations";
+import { articles } from "@/data/articles";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const GARDENER_NAME = "Youssef";
 const PHONE_DISPLAY = "06 49 23 15 45";
@@ -63,14 +66,17 @@ export default function ServicePage({ service }: { service: Service }) {
       />
       <section className="bg-emerald-800 text-white pt-12 pb-16 px-4 rounded-b-lg shadow-md">
         <div className="max-w-3xl mx-auto">
-          <Link href="/#services" className="inline-flex items-center gap-2 text-emerald-200 hover:text-white mb-8 text-sm transition-colors">
-            <ArrowLeft size={16} /> Retour
-          </Link>
+          <div className="mb-8">
+            <Breadcrumb items={[
+              { label: "Services", href: "/#services" },
+              { label: service.name },
+            ]} />
+          </div>
           <h1 className="text-3xl md:text-5xl font-extrabold mb-6 leading-tight">{service.name}</h1>
           <p className="text-lg text-emerald-100 mb-4 max-w-2xl">{service.heroText}</p>
           <p className="text-emerald-300 font-semibold text-lg mb-8">Tarif : {service.priceRange}</p>
           <div className="flex flex-col sm:flex-row gap-4">
-            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-8 py-4 rounded-md font-bold text-lg transition-transform active:scale-95 shadow-md">
+            <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-8 py-4 rounded-md font-bold text-lg transition-transform active:scale-95 shadow-md">
               <MessageCircle size={24} /> Demander un devis
             </a>
             <a href={`tel:${PHONE_LINK}`} className="flex items-center justify-center gap-2 bg-white text-emerald-900 hover:bg-gray-50 px-8 py-4 rounded-md font-bold text-lg transition-transform active:scale-95 shadow-md">
@@ -107,18 +113,55 @@ export default function ServicePage({ service }: { service: Service }) {
         </div>
       </section>
 
+      {/* Maillage interne */}
+      <section className="px-4 max-w-3xl mx-auto">
+        <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 md:p-12">
+          {/* Zones d'intervention */}
+          <h3 className="font-bold text-lg text-gray-900 mb-4 flex items-center gap-2">
+            <MapPin size={20} className="text-emerald-600" /> Zones d&apos;intervention
+          </h3>
+          <div className="flex flex-wrap gap-2 mb-8">
+            {locations.map((loc) => (
+              <Link key={loc.slug} href={`/jardinier-${loc.slug}`} className="bg-emerald-100 text-emerald-800 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-emerald-200 transition-colors">
+                {service.name} {loc.name}
+              </Link>
+            ))}
+          </div>
+
+          {/* Articles associes */}
+          {articles.filter((a) => a.relatedService === service.slug).length > 0 && (
+            <>
+              <h3 className="font-bold text-lg text-gray-900 mb-4 flex items-center gap-2">
+                <BookOpen size={20} className="text-emerald-600" /> Articles conseils
+              </h3>
+              <div className="space-y-3">
+                {articles
+                  .filter((a) => a.relatedService === service.slug)
+                  .slice(0, 3)
+                  .map((a) => (
+                    <Link key={a.slug} href={`/blog/${a.slug}`} className="block bg-gray-50 hover:bg-gray-100 px-4 py-3 rounded-lg transition-colors">
+                      <span className="font-medium text-gray-900">{a.title}</span>
+                      <p className="text-gray-500 text-sm mt-1">{a.excerpt}</p>
+                    </Link>
+                  ))}
+              </div>
+            </>
+          )}
+        </div>
+      </section>
+
       <section className="py-12 px-4">
         <div className="max-w-md mx-auto bg-emerald-800 text-white p-8 rounded-lg text-center shadow-md">
           <h2 className="text-xl font-bold mb-3">Int&eacute;ress&eacute; par ce service ?</h2>
           <p className="text-emerald-100 mb-6">Envoyez une photo pour un devis gratuit en moins d&apos;1 heure !</p>
-          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] hover:bg-[#1ebd5a] text-white px-6 py-4 rounded-md font-bold transition-transform active:scale-95 w-full">
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white px-6 py-4 rounded-md font-bold transition-transform active:scale-95 w-full">
             <MessageCircle size={24} /> Contacter {GARDENER_NAME}
           </a>
         </div>
       </section>
 
       <div className="md:hidden fixed bottom-6 left-0 right-0 px-4 z-50">
-        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-[#25D366] text-white w-full py-4 rounded-md shadow-lg font-bold text-lg border-2 border-white/20">
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 bg-emerald-600 text-white w-full py-4 rounded-md shadow-lg font-bold text-lg border-2 border-white/20">
           <MessageCircle size={24} /> Demander un devis
         </a>
       </div>
