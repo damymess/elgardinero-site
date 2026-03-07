@@ -314,9 +314,8 @@ export function SimpleTree() {
     canvas.width = parent.clientWidth
     canvas.height = parent.clientHeight
 
-    // Clean white background
-    ctx.fillStyle = "#ffffff"
-    ctx.fillRect(0, 0, canvas.width, canvas.height)
+    // Transparent background (container handles bg color)
+    ctx.clearRect(0, 0, canvas.width, canvas.height)
 
     // Create elegant tree
     treeRef.current = createTree(canvas.width, canvas.height)

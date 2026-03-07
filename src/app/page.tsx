@@ -79,11 +79,11 @@ export default function Home() {
       {/* ===== HERO BENTO ===== */}
       <section className="pt-22 pb-6 px-4 md:px-6">
         {/* Mobile : animation en fond + texte par-dessus */}
-        <div className="md:hidden max-w-6xl mx-auto rounded-xl overflow-hidden relative min-h-[420px] border border-gray-200 shadow-sm">
+        <div className="md:hidden max-w-6xl mx-auto rounded-xl overflow-hidden relative min-h-[480px] border border-gray-200 shadow-sm">
           <div className="absolute inset-0">
             <SimpleTree />
           </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/90 via-emerald-900/40 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-emerald-900/20 to-transparent" />
           <div className="relative z-10 flex flex-col justify-end h-full p-5">
             <div className="inline-flex items-center gap-2 bg-white/20 backdrop-blur-sm px-3 py-1.5 rounded-full mb-4 border border-white/30 w-fit">
               <span className="relative flex h-2 w-2">
