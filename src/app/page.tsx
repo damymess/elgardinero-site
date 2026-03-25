@@ -1,7 +1,34 @@
+import type { Metadata } from 'next';
 import Image from 'next/image';
 import Link from 'next/link';
 import { Phone, MessageCircle, Scissors, Leaf, Trash2, Sprout, CheckCircle2, MapPin, Star, Camera, FileText, Hammer, ChevronDown, Clock, TreePine, TreePalm, Droplets, ShieldCheck } from 'lucide-react';
 import { SimpleTree } from '@/components/simple-growth-tree';
+
+export const metadata: Metadata = {
+  title: "Jardinier Paysagiste Rabat | Entretien & Amenagement - El Gardinero",
+  description:
+    "Jardinier paysagiste a Rabat. Entretien de jardins, amenagement paysager, taille, elagage et nettoyage a Hay Riad, Souissi, Agdal, Temara et Sale. Devis gratuit WhatsApp.",
+  keywords: [
+    "jardinier rabat",
+    "paysagiste rabat",
+    "jardinier paysagiste rabat",
+    "entretien jardin rabat",
+    "amenagement paysager rabat",
+    "jardinier hay riad",
+    "jardinier souissi",
+    "taille haie rabat",
+    "prix jardinier maroc",
+    "paysagiste hay riad",
+  ],
+  alternates: { canonical: "https://elgardinero.ma" },
+  openGraph: {
+    title: "Jardinier Paysagiste Rabat | El Gardinero",
+    description:
+      "Jardinier paysagiste a Rabat. Entretien, amenagement paysager, taille et nettoyage. Devis gratuit WhatsApp.",
+    url: "https://elgardinero.ma",
+    images: [{ url: "/og-image.jpg", width: 1200, height: 630, alt: "El Gardinero - Jardinier paysagiste a Rabat" }],
+  },
+};
 
 const faqJsonLd = {
   "@context": "https://schema.org",
@@ -55,6 +82,22 @@ const faqJsonLd = {
         text: "Je m'occupe de tout : ramassage, nettoyage et evacuation des dechets verts. Jardin propre garanti.",
       },
     },
+    {
+      "@type": "Question",
+      name: "Etes-vous aussi paysagiste ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Oui, en plus de l'entretien courant, je realise des projets d'amenagement paysager complets : conception de plans de jardin, choix des vegetaux adaptes au climat de Rabat, plantation, creation de massifs et installation d'arrosage automatique.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "Combien coute un amenagement paysager a Rabat ?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Le tarif depend de la surface et du projet. Envoyez-moi des photos de votre terrain sur WhatsApp pour une estimation gratuite. Les amenagements simples demarrent a partir de 2000 DH.",
+      },
+    },
   ],
 };
 
@@ -94,10 +137,10 @@ export default function Home() {
                 <span className="text-xs font-medium text-emerald-100">Disponible</span>
               </div>
               <h1 className="text-xl font-extrabold leading-tight mb-2 text-emerald-50 drop-shadow-md whitespace-nowrap">
-                Votre Jardinier de Confiance
+                Jardinier Paysagiste &agrave; Rabat
               </h1>
               <p className="text-emerald-200 text-sm drop-shadow-sm">
-                Entretien, taille, am&eacute;nagement et nettoyage &agrave; Rabat, T&eacute;mara &amp; Sal&eacute;.
+                Entretien, am&eacute;nagement paysager, taille et nettoyage &agrave; Rabat, T&eacute;mara &amp; Sal&eacute;.
               </p>
             </div>
             <div className="flex flex-col gap-2">
@@ -135,10 +178,10 @@ export default function Home() {
                 <span className="text-xs font-medium">Disponible</span>
               </div>
               <h1 className="text-3xl font-extrabold leading-tight mb-3">
-                Votre Jardinier de Confiance
+                Jardinier Paysagiste &agrave; Rabat
               </h1>
               <p className="text-emerald-100 text-base">
-                Entretien, taille, am&eacute;nagement et nettoyage &agrave; Rabat, T&eacute;mara &amp; Sal&eacute;.
+                Entretien, am&eacute;nagement paysager, taille et nettoyage &agrave; Rabat, T&eacute;mara &amp; Sal&eacute;.
               </p>
             </div>
             <div className="relative z-10 flex flex-col gap-2 mt-6">
@@ -430,6 +473,14 @@ export default function Home() {
                 question="Que faites-vous des d&eacute;chets verts ?"
                 answer="Je m'occupe de tout : ramassage, nettoyage et &eacute;vacuation des d&eacute;chets verts. Jardin propre garanti."
               />
+              <FaqItem
+                question="&Ecirc;tes-vous aussi paysagiste ?"
+                answer="Oui, en plus de l'entretien courant, je r&eacute;alise des projets d'am&eacute;nagement paysager complets : conception de plans de jardin, choix des v&eacute;g&eacute;taux, plantation, cr&eacute;ation de massifs et installation d'arrosage automatique."
+              />
+              <FaqItem
+                question="Combien co&ucirc;te un am&eacute;nagement paysager &agrave; Rabat ?"
+                answer="Le tarif d&eacute;pend de la surface et du projet. Envoyez-moi des photos sur WhatsApp pour une estimation gratuite. Les am&eacute;nagements simples d&eacute;marrent &agrave; partir de 2000 DH."
+              />
             </div>
           </div>
         </div>
@@ -442,7 +493,7 @@ export default function Home() {
           <div className="md:col-span-2 bg-white p-5 md:p-10 rounded-xl border border-gray-200 shadow-sm">
             <h2 className="text-2xl font-bold text-gray-900 mb-4">&Agrave; propos de {GARDENER_NAME}</h2>
             <p className="text-gray-600 leading-relaxed text-lg mb-6">
-              Bonjour, je suis artisan jardinier ind&eacute;pendant avec 18 ans d&apos;exp&eacute;rience. Mon objectif est simple : vous offrir un service de qualit&eacute;, ponctuel et honn&ecirc;te. En faisant appel &agrave; moi, vous soutenez un p&egrave;re de famille travailleur.
+              Bonjour, je suis artisan jardinier paysagiste ind&eacute;pendant avec 18 ans d&apos;exp&eacute;rience. De l&apos;entretien r&eacute;gulier &agrave; l&apos;am&eacute;nagement paysager complet, mon objectif est simple : vous offrir un service de qualit&eacute;, ponctuel et honn&ecirc;te. En faisant appel &agrave; moi, vous soutenez un p&egrave;re de famille travailleur.
             </p>
             <div className="flex flex-wrap gap-3">
               <span className="flex items-center gap-2 font-medium text-emerald-800 bg-emerald-50 px-4 py-2 rounded-xl text-sm"><CheckCircle2 size={18} className="text-emerald-500" /> Travail rigoureux</span>
@@ -477,7 +528,7 @@ export default function Home() {
             <div>
               <p className="font-extrabold text-lg mb-3">El Gardinero</p>
               <p className="text-gray-400 text-sm leading-relaxed">
-                Artisan jardinier ind&eacute;pendant &agrave; Rabat. Entretien, taille, am&eacute;nagement et nettoyage de jardins.
+                Artisan jardinier paysagiste ind&eacute;pendant &agrave; Rabat. Entretien, am&eacute;nagement paysager, taille et nettoyage de jardins.
               </p>
             </div>
             <div>
@@ -496,6 +547,20 @@ export default function Home() {
               </div>
             </div>
             <div>
+              <p className="font-bold text-sm mb-3 text-gray-300">Paysagiste</p>
+              <div className="flex flex-wrap gap-2 mb-4">
+                {[
+                  { name: 'Rabat', slug: 'rabat' },
+                  { name: 'Hay Riad', slug: 'hay-riad' },
+                  { name: 'Souissi', slug: 'souissi' },
+                  { name: 'Agdal', slug: 'agdal' },
+                  { name: 'T\u00e9mara', slug: 'temara' },
+                  { name: 'Sal\u00e9', slug: 'sale' },
+                  { name: 'Harhoura', slug: 'harhoura' },
+                ].map(z => (
+                  <Link key={z.slug} href={`/paysagiste-${z.slug}`} className="bg-gray-800 text-gray-300 hover:text-white hover:bg-gray-700 px-3 py-1 rounded-lg text-xs transition-colors">{z.name}</Link>
+                ))}
+              </div>
               <p className="font-bold text-sm mb-3 text-gray-300">Contact</p>
               <div className="space-y-2">
                 <a href={`tel:${PHONE_LINK}`} className="flex items-center gap-2 text-gray-400 hover:text-white text-sm transition-colors">
@@ -508,7 +573,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-gray-800 pt-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-gray-600 text-xs">
-            <p>&copy; {new Date().getFullYear()} {GARDENER_NAME} &mdash; Jardinier Rabat</p>
+            <p>&copy; {new Date().getFullYear()} {GARDENER_NAME} &mdash; Jardinier Paysagiste Rabat</p>
             <a href="/mentions-legales" className="hover:text-gray-400 underline">Mentions l&eacute;gales</a>
           </div>
         </div>

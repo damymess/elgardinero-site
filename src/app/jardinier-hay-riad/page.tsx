@@ -8,7 +8,7 @@ const loc = getLocation("hay-riad")!;
 export const metadata: Metadata = {
   title: `Jardinier Hay Riad | Entretien de Jardins - El Gardinero`,
   description: loc.description,
-  keywords: ["jardinier hay riad", "entretien jardin hay riad", "jardinage hay riad rabat", "tonte pelouse hay riad", "jardinier rabat"],
+  keywords: ["jardinier hay riad", "paysagiste hay riad", "entretien jardin hay riad", "jardinage hay riad rabat", "tonte pelouse hay riad", "jardinier rabat"],
   alternates: { canonical: `https://elgardinero.ma/jardinier-hay-riad` },
   openGraph: {
     title: `Jardinier Hay Riad | El Gardinero`,

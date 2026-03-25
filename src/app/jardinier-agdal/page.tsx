@@ -8,7 +8,7 @@ const loc = getLocation("agdal")!;
 export const metadata: Metadata = {
   title: `Jardinier Agdal | Entretien de Jardins - El Gardinero`,
   description: loc.description,
-  keywords: ["jardinier agdal", "entretien jardin agdal", "jardinage agdal rabat", "taille haie agdal", "jardinier rabat"],
+  keywords: ["jardinier agdal", "paysagiste agdal", "entretien jardin agdal", "jardinage agdal rabat", "taille haie agdal", "jardinier rabat"],
   alternates: { canonical: `https://elgardinero.ma/jardinier-agdal` },
   openGraph: {
     title: `Jardinier Agdal | El Gardinero`,

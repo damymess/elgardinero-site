@@ -116,6 +116,18 @@ export default function ServicePage({ service }: { service: Service }) {
       {/* Maillage interne */}
       <section className="px-4 max-w-3xl mx-auto">
         <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-8 md:p-12">
+          {/* Lien paysagiste pour amenagement-jardin */}
+          {service.slug === "amenagement-jardin" && (
+            <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-8">
+              <p className="text-emerald-900 font-medium">
+                D&eacute;couvrez aussi notre page d&eacute;di&eacute;e :{" "}
+                <Link href="/paysagiste-rabat" className="underline hover:text-emerald-700 font-bold">
+                  Paysagiste &agrave; Rabat
+                </Link>
+              </p>
+            </div>
+          )}
+
           {/* Zones d'intervention */}
           <h3 className="font-bold text-lg text-gray-900 mb-4 flex items-center gap-2">
             <MapPin size={20} className="text-emerald-600" /> Zones d&apos;intervention

@@ -20,6 +20,10 @@ module.exports = {
       priority = 0.8;
     } else if (path.startsWith('/jardinier-')) {
       priority = 0.8;
+    } else if (path === '/paysagiste-rabat') {
+      priority = 0.9;
+    } else if (path.startsWith('/paysagiste-')) {
+      priority = 0.8;
     } else if (path === '/blog') {
       priority = 0.8;
       changefreq = 'daily';

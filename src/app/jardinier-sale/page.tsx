@@ -8,7 +8,7 @@ const loc = getLocation("sale")!;
 export const metadata: Metadata = {
   title: `Jardinier Sale | Entretien de Jardins - El Gardinero`,
   description: loc.description,
-  keywords: ["jardinier sale", "entretien jardin sale", "jardinage sale maroc", "tonte pelouse sale", "jardinier rabat sale"],
+  keywords: ["jardinier sale", "paysagiste sale", "entretien jardin sale", "jardinage sale maroc", "tonte pelouse sale", "jardinier rabat sale"],
   alternates: { canonical: `https://elgardinero.ma/jardinier-sale` },
   openGraph: {
     title: `Jardinier Sale | El Gardinero`,

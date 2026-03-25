@@ -18,44 +18,48 @@ const geistSans = localFont({
 export const metadata: Metadata = {
   metadataBase: new URL("https://elgardinero.ma"),
   title: {
-    default: "Jardinier Rabat | Entretien, Taille et Nettoyage de Jardins - El Gardinero",
-    template: "%s | El Gardinero - Jardinier Rabat",
+    default: "Jardinier & Paysagiste Rabat | El Gardinero",
+    template: "%s | El Gardinero - Jardinier Paysagiste Rabat",
   },
   description:
-    "Artisan jardinier de confiance a Rabat, Hay Riad, Souissi, Temara et Sale. Entretien de villas, tonte, elagage et nettoyage. Devis gratuit sur WhatsApp.",
+    "Jardinier paysagiste de confiance a Rabat, Hay Riad, Souissi, Temara et Sale. Entretien, amenagement paysager, tonte, elagage et nettoyage. Devis gratuit WhatsApp.",
   keywords: [
     "jardinier rabat",
+    "paysagiste rabat",
+    "jardinier paysagiste rabat",
     "entretien jardin rabat",
+    "amenagement paysager rabat",
+    "conception paysagere rabat",
     "jardinier hay riad",
     "jardinier souissi",
-    "paysagiste rabat",
     "taille haie temara",
     "jardinier sale",
     "nettoyage jardin rabat",
     "prix jardinier maroc",
+    "prix paysagiste maroc",
   ],
   openGraph: {
     type: "website",
     locale: "fr_FR",
     url: "https://elgardinero.ma",
     siteName: "El Gardinero",
-    title: "Jardinier Rabat | Entretien, Taille et Nettoyage de Jardins",
+    title: "Jardinier & Paysagiste Rabat | El Gardinero",
     description:
-      "Artisan jardinier de confiance a Rabat. Entretien de villas, tonte, elagage et nettoyage. Devis gratuit sur WhatsApp.",
+      "Jardinier paysagiste de confiance a Rabat. Entretien, amenagement paysager, tonte, elagage et nettoyage. Devis gratuit WhatsApp.",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "El Gardinero - Jardinier professionnel a Rabat",
+        alt: "El Gardinero - Jardinier paysagiste a Rabat",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jardinier Rabat | El Gardinero",
+    title: "Jardinier & Paysagiste Rabat | El Gardinero",
     description:
-      "Artisan jardinier de confiance a Rabat. Devis gratuit sur WhatsApp.",
+      "Jardinier paysagiste de confiance a Rabat. Entretien et amenagement paysager. Devis gratuit WhatsApp.",
     images: ["/og-image.jpg"],
   },
   icons: {
@@ -76,7 +80,7 @@ const jsonLd = {
   "@type": "LocalBusiness",
   name: "El Gardinero",
   description:
-    "Artisan jardinier de confiance a Rabat. Entretien de villas, tonte, elagage, taille de haies et nettoyage de jardins.",
+    "Jardinier paysagiste de confiance a Rabat. Entretien de villas, amenagement paysager, tonte, elagage, taille de haies et nettoyage de jardins.",
   url: "https://elgardinero.ma",
   telephone: "+212649231545",
   image: "https://elgardinero.ma/og-image.jpg",
@@ -104,6 +108,8 @@ const jsonLd = {
     "Tonte de pelouse",
     "Nettoyage de jardins",
     "Plantation",
+    "Amenagement paysager",
+    "Conception paysagere",
   ],
   priceRange: "$$",
   aggregateRating: {

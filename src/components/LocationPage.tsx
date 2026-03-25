@@ -126,6 +126,15 @@ export default function LocationPage({ loc }: { loc: Location }) {
             })}
           </div>
 
+          <div className="bg-emerald-50 border border-emerald-200 rounded-lg p-4 mb-8">
+            <p className="text-emerald-900 font-medium">
+              Besoin d&apos;un am&eacute;nagement paysager ?{" "}
+              <Link href={`/paysagiste-${loc.slug}`} className="underline hover:text-emerald-700">
+                Paysagiste &agrave; {loc.name}
+              </Link>
+            </p>
+          </div>
+
           <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 pt-6 border-t border-gray-100">
             <span className="flex items-center gap-2 font-medium text-emerald-800 bg-emerald-50 px-4 py-2 rounded-lg w-fit"><CheckCircle2 size={20} className="text-emerald-500" /> Devis gratuit</span>
             <span className="flex items-center gap-2 font-medium text-emerald-800 bg-emerald-50 px-4 py-2 rounded-lg w-fit"><CheckCircle2 size={20} className="text-emerald-500" /> R&eacute;ponse en -1h</span>

@@ -101,7 +101,7 @@ export default function BlogPage() {
       </section>
       {/* Maillage interne */}
       <section className="pb-16 px-4">
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
             <h3 className="font-bold text-lg text-gray-900 mb-4">Nos services</h3>
             <div className="flex flex-wrap gap-2">
@@ -110,6 +110,19 @@ export default function BlogPage() {
                   {s.name}
                 </Link>
               ))}
+            </div>
+          </div>
+          <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">
+            <h3 className="font-bold text-lg text-gray-900 mb-4">Paysagiste</h3>
+            <div className="flex flex-wrap gap-2">
+              {["Rabat", "Hay Riad", "Souissi", "Agdal", "Temara", "Sale", "Harhoura"].map((name) => {
+                const slug = name.toLowerCase().replace(/ /g, "-");
+                return (
+                  <Link key={slug} href={`/paysagiste-${slug}`} className="bg-emerald-50 text-emerald-700 px-3 py-1.5 rounded-lg text-sm font-medium hover:bg-emerald-100 transition-colors">
+                    Paysagiste {name}
+                  </Link>
+                );
+              })}
             </div>
           </div>
           <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-6">

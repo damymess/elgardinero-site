@@ -68,7 +68,7 @@ export const services: Service[] = [
     icon: "Sprout",
     description: "Service de plantation de fleurs et creation de massifs a Rabat. Amenagement floral adapte au climat marocain pour embellir votre jardin.",
     heroText: "Des plantations colorees et adaptees au climat de Rabat pour un jardin vivant toute l'annee.",
-    details: "Je vous aide a choisir et planter des varietes adaptees au climat de Rabat : bougainvilliers, jasmin, lauriers roses, lantanas, plumbagos et bien d'autres. La creation de massifs fleuris apporte couleur et vie a votre jardin. Je prepare le sol, installe les plantes et vous conseille sur l'arrosage et l'entretien. Pour les nouvelles constructions, je propose un amenagement paysager complet avec choix des vegetaux, disposition et plantation.",
+    details: "Je vous aide a choisir et planter des varietes adaptees au climat de Rabat : bougainvilliers, jasmin, lauriers roses, lantanas, plumbagos et bien d'autres. La creation de massifs fleuris apporte couleur et vie a votre jardin. Je prepare le sol, installe les plantes et vous conseille sur l'arrosage et l'entretien. En tant que jardinier paysagiste, je propose egalement un amenagement paysager complet pour les nouvelles constructions avec choix des vegetaux, disposition et plantation.",
     benefits: [
       "Selection de plantes adaptees au climat",
       "Creation de massifs fleuris",
@@ -81,11 +81,11 @@ export const services: Service[] = [
   },
   {
     slug: "amenagement-jardin",
-    name: "Amenagement Jardin",
+    name: "Amenagement Paysager",
     icon: "TreePine",
-    description: "Amenagement paysager a Rabat. Conception et realisation de jardins pour villas et residences. Devis gratuit sur WhatsApp.",
-    heroText: "Un jardin concu sur mesure, de la conception a la realisation, adapte a vos envies et a votre budget.",
-    details: "Vous construisez une villa ou souhaitez transformer completement votre espace exterieur ? Je propose un service d'amenagement complet : etude de votre terrain, proposition d'un plan paysager, choix des vegetaux, installation de gazon, creation de massifs, pose de bordures et amenagement d'allees. Chaque projet est unique et adapte a vos gouts, votre budget et les specificites de votre terrain (exposition, sol, surface).",
+    description: "Paysagiste a Rabat. Conception paysagere et amenagement de jardins pour villas et residences. Jardinier paysagiste avec 18 ans d'experience. Devis gratuit WhatsApp.",
+    heroText: "Paysagiste a Rabat : un jardin concu sur mesure, de la conception paysagere a la realisation, adapte a vos envies et a votre budget.",
+    details: "Vous construisez une villa ou souhaitez transformer completement votre espace exterieur ? En tant que paysagiste a Rabat, je propose un service d'amenagement paysager complet : etude de votre terrain, conception paysagere personnalisee, choix des vegetaux adaptes au climat marocain, installation de gazon, creation de massifs, pose de bordures et amenagement d'allees. Chaque projet paysager est unique et adapte a vos gouts, votre budget et les specificites de votre terrain (exposition, sol, surface).",
     benefits: [
       "Etude et plan paysager personnalise",
       "Installation de gazon naturel",

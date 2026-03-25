@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Phone, MessageCircle, Menu, X } from "lucide-react";
 
 const PHONE_LINK = "+212649231545";
@@ -22,12 +23,14 @@ export default function Navbar() {
           >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
-          <Link href="/" className="font-extrabold text-gray-900 text-lg tracking-tight">
-            El Gardinero
+          <Link href="/">
+            <Image src="/logo-icon.jpg" alt="El Gardinero" width={36} height={36} className="md:hidden rounded-sm" />
+            <Image src="/logo-horizontal.jpg" alt="El Gardinero - Artisan Jardinier Rabat" width={180} height={45} className="hidden md:block" />
           </Link>
         </div>
         <div className="hidden md:flex items-center gap-6">
           <Link href="/#services" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">Services &amp; Tarifs</Link>
+          <Link href="/paysagiste-rabat" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">Paysagiste</Link>
           <Link href="/blog" className="text-gray-600 hover:text-gray-900 text-sm font-medium transition-colors">Blog</Link>
         </div>
         <div className="flex items-center gap-3">
@@ -56,6 +59,7 @@ export default function Navbar() {
           <div className="flex flex-col px-4 py-3 gap-1">
             <Link href="/" onClick={() => setOpen(false)} className="py-2.5 px-3 rounded-lg text-gray-800 font-medium hover:bg-gray-50 transition-colors">Accueil</Link>
             <Link href="/#services" onClick={() => setOpen(false)} className="py-2.5 px-3 rounded-lg text-gray-800 font-medium hover:bg-gray-50 transition-colors">Services &amp; Tarifs</Link>
+            <Link href="/paysagiste-rabat" onClick={() => setOpen(false)} className="py-2.5 px-3 rounded-lg text-gray-800 font-medium hover:bg-gray-50 transition-colors">Paysagiste</Link>
             <Link href="/blog" onClick={() => setOpen(false)} className="py-2.5 px-3 rounded-lg text-gray-800 font-medium hover:bg-gray-50 transition-colors">Blog</Link>
             <a href={`tel:${PHONE_LINK}`} className="py-2.5 px-3 rounded-lg text-gray-800 font-medium hover:bg-gray-50 transition-colors flex items-center gap-2">
               <Phone size={16} /> 06 49 23 15 45
