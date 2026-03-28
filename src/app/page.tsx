@@ -103,9 +103,9 @@ const faqJsonLd = {
 
 export default function Home() {
   const GARDENER_NAME = "Adil";
-  const PHONE_DISPLAY = "06 49 23 15 45";
-  const PHONE_LINK = "+212649231545";
-  const WHATSAPP_NUM = "212649231545";
+  const PHONE_DISPLAY = "06 61 23 85 25";
+  const PHONE_LINK = "+212661238525";
+  const WHATSAPP_NUM = "212661238525";
 
   const whatsappMessage = encodeURIComponent(`Bonjour ${GARDENER_NAME}, je vous contacte depuis votre site web pour l'entretien de mon jardin.`);
   const whatsappUrl = `https://wa.me/${WHATSAPP_NUM}?text=${whatsappMessage}`;

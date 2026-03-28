@@ -24,7 +24,7 @@ export default function MentionsLegales() {
               <strong>El Gardinero</strong><br />
               Adil — Artisan jardinier ind&eacute;pendant<br />
               Rabat, Maroc<br />
-              T&eacute;l&eacute;phone : 06 49 23 15 45<br />
+              T&eacute;l&eacute;phone : 06 61 23 85 25<br />
               Email : contact@elgardinero.ma
             </p>
           </section>

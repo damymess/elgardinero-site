@@ -5,8 +5,8 @@ import Link from "next/link";
 import Image from "next/image";
 import { Phone, MessageCircle, Menu, X } from "lucide-react";
 
-const PHONE_LINK = "+212649231545";
-const WHATSAPP_NUM = "212649231545";
+const PHONE_LINK = "+212661238525";
+const WHATSAPP_NUM = "212661238525";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -23,7 +23,7 @@ export default function Navbar() {
           >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>
-          <Link href="/">
+          <Link href="/" className="flex items-center">
             <Image src="/logo-icon.jpg" alt="El Gardinero" width={36} height={36} className="md:hidden rounded-sm" />
             <Image src="/logo-horizontal.jpg" alt="El Gardinero - Artisan Jardinier Rabat" width={180} height={45} className="hidden md:block" />
           </Link>

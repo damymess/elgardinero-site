@@ -82,7 +82,7 @@ const jsonLd = {
   description:
     "Jardinier paysagiste de confiance a Rabat. Entretien de villas, amenagement paysager, tonte, elagage, taille de haies et nettoyage de jardins.",
   url: "https://elgardinero.ma",
-  telephone: "+212649231545",
+  telephone: "+212661238525",
   image: "https://elgardinero.ma/og-image.jpg",
   address: {
     "@type": "PostalAddress",
